@@ -1,7 +1,7 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 let votingAge = 19;
-console.log(votingAge>18)
+console.log(votingAge > 18)
 
 
 
@@ -9,20 +9,20 @@ console.log(votingAge>18)
 let curWeather = 'None';
 let temperature = 81;
 
-if (temperature>80){
-    curWeather='Hot';
+if (temperature > 80) {
+    curWeather = 'Hot';
 }
 
-else if (temperature>50){
-    curWeather='Warm'
+else if (temperature > 50) {
+    curWeather = 'Warm'
 }
 
-else if (temperature>30){
-    curWeather='Cool'
+else if (temperature > 30) {
+    curWeather = 'Cool'
 }
 
-else{
-    curWeather='Cold'
+else {
+    curWeather = 'Cold'
 }
 
 console.log(curWeather); //For testing purposes
@@ -34,11 +34,11 @@ let num = Number('1999');
 
 
 //Task d: Write a function to multiply a*b 
-function multiply(a,b){
-    return a*b;
+function multiply(a, b) {
+    return a * b;
 }
 
-console.log(multiply(12,5)); //For testing purposes
+console.log(multiply(12, 5)); //For testing purposes
 
 
 
@@ -46,8 +46,8 @@ console.log(multiply(12,5)); //For testing purposes
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
-function dogAgeConvertor(humanAge){
-    return humanAge*7;
+function dogAgeConvertor(humanAge) {
+    return humanAge * 7;
 }
 
 console.log(dogAgeConvertor(18)); //For testing purposes
@@ -74,15 +74,15 @@ console.log(dogAgeConvertor(18)); //For testing purposes
 
 // For this function: I considered the use case. If the client wants to add more refined percentages, the following setup will allow them to do so very effortlessly.
 
-function dogFeeder(weight, age){
+function dogFeeder(weight, age) {
 
     // Since the adult calcs are based off weight, they are defined here.
-    let adultWeights=[5,10,15];
-    let adultPercents=[.05,.04,.03,.02];
+    let adultWeights = [5, 10, 15];
+    let adultPercents = [.05, .04, .03, .02];
 
     // Respectively, the puppies calcs are based off ages, so they are here.
-    let puppyAges=[1/3, 7/12];
-    let puppyPercents=[.10,.05,.04];
+    let puppyAges = [1 / 3, 7 / 12];
+    let puppyPercents = [.10, .05, .04];
 
     // The metric by default is set to the puppy metrics.
     let metric = age;
@@ -90,24 +90,24 @@ function dogFeeder(weight, age){
     let percents = puppyPercents;
 
     // If the dog is an adult, switches the metrics to that.
-    if (age>=1){
+    if (age >= 1) {
         metric = weight;
         metricCompare = adultWeights;
         percents = adultPercents;
     }
 
     // The loop goes through the metrics and compares it to the correct array.
-    for (let i = 0; i<metricCompare.length; i++){
-        if (metric<=metricCompare[i]){
+    for (let i = 0; i < metricCompare.length; i++) {
+        if (metric <= metricCompare[i]) {
 
             // Immediately returns as soon as the correct value is found, saving time.
-            return metric*percents[i];
+            return metric * percents[i];
         }
 
     }
 
     // If the value is part of the highest range, multiplies it by the highest metric.
-    return metric*percents[percents.length-1];
+    return metric * percents[percents.length - 1];
 
     // return weight*adultPercents[adultPercents.length-1];
 
@@ -131,7 +131,7 @@ function dogFeeder(weight, age){
     //     return age*puppyAges[puppyPercents.length-1];
     // }
 
-    
+
 
     // if(age<1){
     //     if (weight<=5){
@@ -144,8 +144,8 @@ function dogFeeder(weight, age){
     // }
 }
 
-console.log(dogFeeder(15,1));
-  
+console.log(dogFeeder(15, 1));
+
 
 
 
@@ -157,87 +157,87 @@ console.log(dogFeeder(15,1));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  function rockPaperScissors(playerChoice){
+function rockPaperScissors(playerChoice) {
 
-      let playerNum = 0;
+    let playerNum = 0;
 
-      if (playerChoice.toUpperCase()===('ROCK')){
-          playerNum=1;
-      }
-      else if (playerChoice.toUpperCase()===('PAPER')){
-          playerNum=2;
-      }
-      else if (playerChoice.toUpperCase()===('SCISSORS')){
-          playerNum=3;
-      }
+    if (playerChoice.toUpperCase() === ('ROCK')) {
+        playerNum = 1;
+    }
+    else if (playerChoice.toUpperCase() === ('PAPER')) {
+        playerNum = 2;
+    }
+    else if (playerChoice.toUpperCase() === ('SCISSORS')) {
+        playerNum = 3;
+    }
 
     //   Immediately cuts the function short if it's an invalid input.
-      else{
-          return 'Invalid Input';
-      }
+    else {
+        return 'Invalid Input';
+    }
 
-      let computerNum = Math.floor(Math.random()*3)+1;
+    let computerNum = Math.floor(Math.random() * 3) + 1;
 
     //   console.log(playerNum);
     //   console.log(computerNum);
 
     //   Calculates draw first.
-      if (computerNum===playerNum){
-          return 'Draw';
-      }
+    if (computerNum === playerNum) {
+        return 'Draw';
+    }
 
     //   Lose state is always calculated first, then win state.
-      else if (computerNum===3 || playerNum===3){
+    else if (computerNum === 3 || playerNum === 3) {
 
-          if (computerNum===1){
-              return 'Lose';
-          }
+        if (computerNum === 1) {
+            return 'Lose';
+        }
 
         //   No else statement needed because only other possible state is win.
-          return 'Win';
-      }
+        return 'Win';
+    }
 
     // Calculate win/lose otherwise.
-      else if (computerNum>playerNum){
-          return 'Lose';
-      }
+    else if (computerNum > playerNum) {
+        return 'Lose';
+    }
 
-      else {
-          return 'Win';
-      }
+    else {
+        return 'Win';
+    }
 
-  }
+}
 
-  console.log(rockPaperScissors('scissors'));
-  
+console.log(rockPaperScissors('scissors')); //For testing purposes
+
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
-function kmToMiles(km){
-    return km*0.621371;
+function kmToMiles(km) {
+    return km * 0.621371;
 }
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  function feetToCm(feet){
-      return feet*30.48;
-  }
+function feetToCm(feet) {
+    return feet * 30.48;
+}
 
-  console.log(kmToMiles(3));
+console.log(kmToMiles(3)); //For testing purposes
 
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  function annoyingSong(starting){
-      for (let i = starting; i>=1; i--){
-          console.log(i);
-      }
-  }
+function annoyingSong(starting) {
+    for (let i = starting; i >= 1; i--) {
+        console.log(i);
+    }
+}
 
-  annoyingSong(5);
+annoyingSong(5);
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -248,49 +248,49 @@ function kmToMiles(km){
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  function gradeCalculator(number){
+function gradeCalculator(number) {
 
-      if (number>100){
-          return 'Invalid number!'
-      }
+    if (number > 100) {
+        return 'Invalid number!'
+    }
 
-      let grades=['A','B','C','D'];
-      let numbers = [90,80,70,60];
+    let grades = ['A', 'B', 'C', 'D'];
+    let numbers = [90, 80, 70, 60];
 
-      for (let i = 0; i<numbers.length; i++){
-          if(number>=numbers[i]){
-              return grades[i];
-          }
-      }
+    for (let i = 0; i < numbers.length; i++) {
+        if (number >= numbers[i]) {
+            return grades[i];
+        }
+    }
 
-      return grades[grades.length-1];
+    return grades[grades.length - 1];
 
-  }
+}
 
-  console.log(gradeCalculator(40));
-  
-  
+console.log(gradeCalculator(40));
+
+
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
-function vowelCount(word){
+function vowelCount(word) {
     word = word.toUpperCase();
-    let vowels = ['A','E','I','O','U'];
+    let vowels = ['A', 'E', 'I', 'O', 'U'];
     let count = 0;
 
-    for (let letter of word){
-        if (vowels.includes(letter)){
+    for (let letter of word) {
+        if (vowels.includes(letter)) {
             count++;
         }
     }
-    
+
     return count;
 }
 
-console.log(vowelCount('aaaaaee'));
+console.log(vowelCount('aaaaaee')); //For testing purposes
 
 
 /************************************************************** Stretch **************************************************************/
